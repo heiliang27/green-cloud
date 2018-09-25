@@ -1,5 +1,7 @@
 # 配置中心地址
 spring:  
+  application:
+    name: green-admin
   cloud:
     config:
       lable: master

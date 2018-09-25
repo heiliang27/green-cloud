@@ -12,7 +12,7 @@ public class HelloController {
 	@Value("${server.port}")
 	String port ;
 	// 注意文件命名 yml和proper... 及访问资源的配置文件
-	@Value("${lml.name}")
+	@Value("${spring.application.name}")
 	String admin;
 	
 	
