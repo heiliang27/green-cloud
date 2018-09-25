@@ -1,0 +1,30 @@
+# server端口
+server:
+  port: 9999
+  
+# erueka 客户端配置  
+eureka:
+  client:
+    healthcheck:
+      enabled: true #开启健康检查
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+#    appname: config-server
+    
+# 配置中心地址
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: git #这个默认为git 可以不配置
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+          uri: https://github.com/heiliang27/config
+          # searchPaths: / # foo,bar* 服务器搜索顶级和“foo /”子目录以及名称以“bar”开头的任何子目录中的配置文件
+          # username: trolley
+          # password: strongpassword

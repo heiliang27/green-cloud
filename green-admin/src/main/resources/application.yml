@@ -1,0 +1,19 @@
+# server端口
+server:
+  port: 8888
+
+# 服务名称
+spring: 
+  application:
+    name: green-admin
+          
+# erueka 客户端配置  
+eureka:
+  client:
+    healthcheck:
+      enabled: true #开启健康检查
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+ #   appname: config-server # 配置服务名 类似  application:name: green-admin  没有 后者优先级高
