@@ -6,7 +6,15 @@ server:
 spring:
   application:
     name: eurka-server
-    
+
+# 开启身份验证
+security:
+  basic:
+    enabled: true # 启用身份认证
+  user:
+    name: lml # 定义用户名
+    password: lml1112 # 定义密码
+        
 # 注册中心配置 host地址 注册中心地址
 eureka:
   instance:
