@@ -12,6 +12,7 @@
 		<module>config-server</module>
 		<module>green-admin</module>
 		<module>gateway-api</module>
+		<module>green-common</module>
 	</modules>
 
 	<!-- 继承springboot默认功能加载 -->
