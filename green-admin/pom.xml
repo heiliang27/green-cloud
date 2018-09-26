@@ -11,6 +11,13 @@
 	<!-- maven引入依赖jar包 -->
 	<dependencies>
 
+		<!-- 引入自己公共代码 -->
+		<dependency>
+			<groupId>com.green</groupId>
+			<artifactId>green-common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
 		<!-- springcloud web工程启动器 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
