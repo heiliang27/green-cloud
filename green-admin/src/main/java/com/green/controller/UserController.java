@@ -1,5 +1,7 @@
 package com.green.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,8 +16,9 @@ public class UserController {
 	private UserService userService;
 	
 	@RequestMapping(value = "/getUserServiceInfo")
-	public BaseResponse<String> getUserServiceInfo(){
-		return new BaseResponse<>(userService.toString());
+	public BaseResponse<List> getUserServiceInfo(){
+		List list = userService.getUserList();
+		return new BaseResponse<>(list);
 	}
 
 }

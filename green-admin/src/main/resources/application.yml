@@ -1,6 +1,6 @@
 # server端口
 server:
-  port: 8889
+  port: 8888
            
 # erueka 客户端配置  
 eureka:

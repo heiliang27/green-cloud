@@ -1,21 +1,23 @@
 package com.green.common.config;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Configurable;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.green.bean.config.DruidProperties;
 
-@Configurable
+@Configuration
+@MapperScan(basePackages = {"com.green.mapper"})
 public class MybatisPlusConfig {
 
 	@Autowired
-	DruidProperties druidProperties;
+	private DruidProperties druidProperties;
 
 	/** druid数据源配置 */
 	@Bean
-	private DruidDataSource dataSource() {
+	public DruidDataSource dataSource() {
 		DruidDataSource dataSource = new DruidDataSource();
 		System.out.println("MybatisConfig.dataSource--加载-------------------------");
 		druidProperties.config(dataSource);

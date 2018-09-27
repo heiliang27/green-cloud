@@ -1,5 +1,7 @@
 package com.green.service;
 
-public interface UserService {
+import java.util.List;
 
+public interface UserService {
+	List getUserList();
 }

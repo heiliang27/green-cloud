@@ -1,8 +1,14 @@
 package com.green.bean.config;
 
 import java.sql.SQLException;
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.stereotype.Component;
+
 import com.alibaba.druid.pool.DruidDataSource;
 
+@Component
+@ConfigurationProperties(prefix = "spring.datasource")
 public class DruidProperties {
 	
 	private String url = "jdbc:mysql://qdm170159589.my3w.com/qdm170159589_db?useUnicode=true&characterEncoding=UTF8";

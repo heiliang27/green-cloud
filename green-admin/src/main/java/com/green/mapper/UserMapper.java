@@ -1,5 +1,7 @@
 package com.green.mapper;
 
-public interface UserMapper{
+import java.util.List;
 
+public interface UserMapper{
+	List getUserList();
 }
