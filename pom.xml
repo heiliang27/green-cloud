@@ -25,13 +25,55 @@
 	<!-- 指定解码方式 和 jdk版本号 -->
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<java.version>1.8</java.version> 
+		<java.version>1.8</java.version>
 		<spring-cloud.version>Finchley.SR1</spring-cloud.version>
+		<mybatis-plus.version>3.0.3</mybatis-plus.version>
+		<druid.version>1.1.10</druid.version>
+		<mysql.version>8.0.11</mysql.version>
+		<green-common.version>0.0.1-SNAPSHOT</green-common.version>
+		<commons-lang3.version>3.4</commons-lang3.version>
+		<fastjson.version>1.2.36</fastjson.version>
 	</properties>
 
 	<!-- springcloud资源库 指定依赖jar包版本，保证架包版本兼容 -->
 	<dependencyManagement>
 		<dependencies>
+			<!-- 引入自己公共代码 -->
+			<dependency>
+				<groupId>com.green</groupId>
+				<artifactId>green-common</artifactId>
+				<version>${green-common.version}</version>
+			</dependency>
+
+			<!-- fastjson -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>${fastjson.version}</version>
+			</dependency>
+
+			<!-- commons-lang3 -->
+			<dependency>
+				<groupId>org.apache.commons</groupId>
+				<artifactId>commons-lang3</artifactId>
+				<version>${commons-lang3.version}</version>
+			</dependency>
+			
+			<!-- mybatis-plus加强版 -->
+			<dependency>
+				<groupId>com.baomidou</groupId>
+				<artifactId>mybatis-plus</artifactId>
+				<version>${mybatis-plus.version}</version>
+			</dependency>
+
+			<!-- mysql连接 -->
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>${mysql.version}</version>
+			</dependency>
+
+			<!-- springcloud版本控制 -->
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
@@ -43,7 +85,7 @@
 	</dependencyManagement>
 
 	<!-- maven引入依赖jar包 -->
-	<dependencies>	
+	<dependencies>
 
 		<!-- 测试包，测试时启动 -->
 		<dependency>
