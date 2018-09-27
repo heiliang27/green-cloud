@@ -1,20 +1,16 @@
-package com.green.config;
+package com.green.common.config;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
-import org.springframework.context.annotation.Bean;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.alibaba.druid.pool.DruidDataSource;
-import com.green.config.datasource.DruidProperties;
+import com.green.bean.config.DruidProperties;
 
 @Configurable
 @SuppressWarnings("unused")
-@EnableTransactionManagement(order = 2) // 由于引入多数据源，所以让spring事务的aop要在多数据源切换aop的后面
 @MapperScan(basePackages = { "com.green.**.mapper" }) // @MapperScan可以指定要扫描的Mapper类的包的路径
-public class MybatisConfig {
-	
+public class MybatisPlusConfig {
 	@Autowired
 	DruidProperties druidProperties;
 

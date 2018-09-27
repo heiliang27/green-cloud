@@ -1,4 +1,4 @@
-package com.green.hello.controller;
+package com.green.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
