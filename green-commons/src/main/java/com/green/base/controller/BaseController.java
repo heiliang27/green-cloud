@@ -4,7 +4,6 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-@SuppressWarnings("unused")
 public class BaseController {
 	@Autowired
 	private HttpServletRequest request;
