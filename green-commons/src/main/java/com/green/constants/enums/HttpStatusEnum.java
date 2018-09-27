@@ -1,4 +1,4 @@
-package com.green.enums;
+package com.green.constants.enums;
 
 public enum HttpStatusEnum {
 	OK(200, "操作成功"), INVALID_REQUEST(400, "参数错误"), UNAUTHORIZED(401, "没有权限"), FORBIDDEN(403, "禁止访问"), NOT_FOUND(404,

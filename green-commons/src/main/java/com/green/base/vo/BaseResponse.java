@@ -1,6 +1,6 @@
 package com.green.base.vo;
 
-import com.green.enums.HttpStatusEnum;
+import com.green.constants.enums.HttpStatusEnum;
 
 public class BaseResponse<E> {
 
