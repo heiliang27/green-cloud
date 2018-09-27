@@ -8,5 +8,5 @@ spring:
       profile: dev
 #      url: http://config-server:9999/
       discovery:
-        enabled: true #是否从配置中心读取        
+        enabled: false #是否从配置中心读取        
         serviceId: config-server #配置中心服务名 使用集群，不需要自定ip和端口

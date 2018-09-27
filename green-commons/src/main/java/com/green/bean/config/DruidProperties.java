@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import com.alibaba.druid.pool.DruidDataSource;
 
 public class DruidProperties {
+	
 	private String url = "jdbc:mysql://qdm170159589.my3w.com/qdm170159589_db?useUnicode=true&characterEncoding=UTF8";
 
 	private String username = "qdm170159589";
