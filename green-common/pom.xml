@@ -6,7 +6,7 @@
 		<artifactId>green-cloud</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>green-common</artifactId>
+	<artifactId>green-commons</artifactId>
 
 	<!-- maven引入依赖jar包 -->
 	<dependencies>
@@ -15,6 +15,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!-- druid连接池 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
 		</dependency>
 
 	</dependencies>

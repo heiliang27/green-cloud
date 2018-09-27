@@ -14,8 +14,7 @@
 		<!-- 引入自己公共代码 -->
 		<dependency>
 			<groupId>com.green</groupId>
-			<artifactId>green-common</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<artifactId>green-commons</artifactId>
 		</dependency>
 
 		<!-- springcloud web工程启动器 -->
@@ -41,6 +40,37 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
+
+		<!-- mybatis-plus加强版 -->
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus</artifactId>
+		</dependency>
+
+		<!-- jdbc -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+
+		<!-- mysql连接 -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency>
+
+		<!--aop -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
 	</dependencies>
 
 </project>

@@ -6,8 +6,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.green.base.controller.BaseController;
+
 @RestController
-public class HelloController {
+public class HelloController extends BaseController{
 
 	@Value("${server.port}")
 	String port ;
@@ -18,6 +20,7 @@ public class HelloController {
 	
 	@RequestMapping(value = "/hello" , method = RequestMethod.GET)
 	public String hello(@RequestParam(value = "name", defaultValue = "forezp") String name){
+		logger.info("hello word : "+port+" -- name : "+name +" admin:"+admin);
 		return "hello word : "+port+" -- name : "+name +" admin:"+admin;
 	}
 }

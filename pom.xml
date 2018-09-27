@@ -12,7 +12,7 @@
 		<module>config-server</module>
 		<module>green-admin</module>
 		<module>gateway-api</module>
-		<module>green-common</module>
+		<module>green-commons</module>
 	</modules>
 
 	<!-- 继承springboot默认功能加载 -->
@@ -30,7 +30,7 @@
 		<mybatis-plus.version>3.0.3</mybatis-plus.version>
 		<druid.version>1.1.10</druid.version>
 		<mysql.version>8.0.11</mysql.version>
-		<green-common.version>0.0.1-SNAPSHOT</green-common.version>
+		<green-commons.version>0.0.1-SNAPSHOT</green-commons.version>
 		<commons-lang3.version>3.4</commons-lang3.version>
 		<fastjson.version>1.2.36</fastjson.version>
 	</properties>
@@ -41,8 +41,8 @@
 			<!-- 引入自己公共代码 -->
 			<dependency>
 				<groupId>com.green</groupId>
-				<artifactId>green-common</artifactId>
-				<version>${green-common.version}</version>
+				<artifactId>green-commons</artifactId>
+				<version>${green-commons.version}</version>
 			</dependency>
 
 			<!-- fastjson -->
@@ -58,7 +58,7 @@
 				<artifactId>commons-lang3</artifactId>
 				<version>${commons-lang3.version}</version>
 			</dependency>
-			
+
 			<!-- mybatis-plus加强版 -->
 			<dependency>
 				<groupId>com.baomidou</groupId>
@@ -71,6 +71,13 @@
 				<groupId>mysql</groupId>
 				<artifactId>mysql-connector-java</artifactId>
 				<version>${mysql.version}</version>
+			</dependency>
+
+			<!-- druid连接池 -->
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>druid</artifactId>
+				<version>${druid.version}</version>
 			</dependency>
 
 			<!-- springcloud版本控制 -->
