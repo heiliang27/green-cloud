@@ -47,7 +47,7 @@ public class MybatisGenerator {
 		GlobalConfig gc = new GlobalConfig();
 		String projectPath = System.getProperty("user.dir");
 		gc.setOutputDir(projectPath + "/src/main/java");
-		gc.setAuthor("jobob");
+		gc.setAuthor("limingliang");
 		gc.setOpen(false);
 		mpg.setGlobalConfig(gc);
 
