@@ -18,7 +18,7 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-public class Dept implements Serializable {
+public class Dict implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -29,13 +29,9 @@ public class Dept implements Serializable {
 
     private Integer pid;
 
-    private String simplename;
-
-    private String fullname;
+    private String name;
 
     private String tips;
-
-    private Integer version;
 
 
 }

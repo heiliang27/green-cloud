@@ -99,8 +99,8 @@ public class GreenGenerator extends AbstractGeneratorConfig {
 		strategy.setEntityLombokModel(true);
 		strategy.setRestControllerStyle(true);
 		strategy.setSuperControllerClass("com.green.base.controller.BaseController");
-		strategy.setInclude(scanner("表名"));
-		strategy.setSuperEntityColumns("id");
+		strategy.setInclude(scanner("表名").split("[,;]"));
+//		strategy.setSuperEntityColumns("id");
 		strategy.setControllerMappingHyphenStyle(true);
 		strategy.setTablePrefix(pc.getModuleName() + "_");
 	}
