@@ -9,7 +9,7 @@ import com.alibaba.druid.pool.DruidDataSource;
 import com.green.bean.config.DruidProperties;
 
 @Configuration
-@MapperScan(basePackages = {"com.green.mapper"})
+@MapperScan(basePackages = {"com.green.modular.**.mapper"})
 public class MybatisPlusConfig {
 
 	@Autowired

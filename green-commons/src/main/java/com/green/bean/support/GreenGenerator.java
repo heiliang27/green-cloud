@@ -67,7 +67,7 @@ public class GreenGenerator extends AbstractGeneratorConfig {
 	// 包配置
 	private void packageConfig() {
 		pc.setModuleName(scanner("模块名"));
-		pc.setParent("com.green.modular");
+		pc.setParent("com.green");
 	}
 
 	// 自定义配置
@@ -99,8 +99,6 @@ public class GreenGenerator extends AbstractGeneratorConfig {
 		strategy.setEntityLombokModel(true);
 		strategy.setRestControllerStyle(true);
 		strategy.setSuperControllerClass("com.green.base.controller.BaseController");
-		// String tableName = scanner("表名");
-		// if(!"".equals(tableName.trim()))
 		strategy.setInclude(scanner("表名"));
 		strategy.setSuperEntityColumns("id");
 		strategy.setControllerMappingHyphenStyle(true);

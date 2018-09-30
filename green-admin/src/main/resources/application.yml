@@ -15,8 +15,8 @@ eureka:
 
 # mybatis配置配置xml路径
 # mybatis:
-#  mapper-locations: classpath*:mapper/*Mapper.xml
-#  type-aliases-package: com.green.model
+#  mapper-locations: classpath*:mapper/**/*Mapper.xml
+#  type-aliases-package: com.green.modular.entity
  
 #  mybatis-plus配置
 mybatis-plus:
