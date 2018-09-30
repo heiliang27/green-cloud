@@ -7,19 +7,22 @@ import java.util.Scanner;
 import com.baomidou.mybatisplus.core.exceptions.MybatisPlusException;
 import com.baomidou.mybatisplus.core.toolkit.StringPool;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
-import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.InjectionConfig;
-import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
 import com.baomidou.mybatisplus.generator.config.FileOutConfig;
-import com.baomidou.mybatisplus.generator.config.GlobalConfig;
-import com.baomidou.mybatisplus.generator.config.PackageConfig;
-import com.baomidou.mybatisplus.generator.config.StrategyConfig;
-import com.baomidou.mybatisplus.generator.config.TemplateConfig;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
-import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 
-public class MybatisGenerator {
+public class GreenGenerator extends AbstractGeneratorConfig {
+
+	@Override
+	protected void config() {
+		globalConfig();
+		dataSourceConfig();
+		packageConfig();
+		injectionConfig();
+		strategyConfig();
+	}
+
 	/**
 	 * <p>
 	 * 读取控制台内容
@@ -39,38 +42,41 @@ public class MybatisGenerator {
 		throw new MybatisPlusException("请输入正确的" + tip + "！");
 	}
 
-	public static void main(String[] args) {
-		// 代码生成器
-		AutoGenerator mpg = new AutoGenerator();
+	String projectPath = System.getProperty("user.dir");
 
-		// 全局配置
-		GlobalConfig gc = new GlobalConfig();
-		String projectPath = System.getProperty("user.dir");
+	// 全局配置
+	private void globalConfig() {
 		gc.setOutputDir(projectPath + "/src/main/java");
+		gc.setFileOverride(true);
+		gc.setEnableCache(false);
+		gc.setBaseResultMap(true);
+		gc.setBaseColumnList(true);
 		gc.setAuthor("limingliang");
 		gc.setOpen(false);
-		mpg.setGlobalConfig(gc);
+	}
 
-		// 数据源配置
-		DataSourceConfig dsc = new DataSourceConfig();
+	// 资源配置
+	private void dataSourceConfig() {
 		dsc.setUrl("jdbc:mysql://qdm170159589.my3w.com/qdm170159589_db?useUnicode=true&characterEncoding=UTF8");
 		// dsc.setSchemaName("public");
 		dsc.setDriverName("com.mysql.jdbc.Driver");
 		dsc.setUsername("qdm170159589");
 		dsc.setPassword("12345678");
-		mpg.setDataSource(dsc);
+	}
 
-		// 包配置
-		PackageConfig pc = new PackageConfig();
+	// 包配置
+	private void packageConfig() {
 		pc.setModuleName(scanner("模块名"));
-		pc.setParent("com.green");
-		mpg.setPackageInfo(pc);
+		pc.setParent("com.green.modular");
+	}
 
-		// 自定义配置
-		InjectionConfig cfg = new InjectionConfig() {
+	// 自定义配置
+	private void injectionConfig() {
+		cfg = new InjectionConfig() {
 			@Override
 			public void initMap() {
-				// to do nothing
+				// TODO Auto-generated method stub
+
 			}
 		};
 		List<FileOutConfig> focList = new ArrayList<>();
@@ -83,23 +89,22 @@ public class MybatisGenerator {
 			}
 		});
 		cfg.setFileOutConfigList(focList);
-		mpg.setCfg(cfg);
-		mpg.setTemplate(new TemplateConfig().setXml(null));
+	}
 
-		// 策略配置
-		StrategyConfig strategy = new StrategyConfig();
+	// 策略配置
+	private void strategyConfig() {
 		strategy.setNaming(NamingStrategy.underline_to_camel);
 		strategy.setColumnNaming(NamingStrategy.underline_to_camel);
-		strategy.setSuperEntityClass("com.baomidou.ant.common.BaseEntity");
+//		strategy.setSuperEntityClass("com.baomidou.ant.common.BaseEntity");
 		strategy.setEntityLombokModel(true);
 		strategy.setRestControllerStyle(true);
-		strategy.setSuperControllerClass("com.baomidou.ant.common.BaseController");
+		strategy.setSuperControllerClass("com.green.base.controller.BaseController");
+		// String tableName = scanner("表名");
+		// if(!"".equals(tableName.trim()))
 		strategy.setInclude(scanner("表名"));
 		strategy.setSuperEntityColumns("id");
 		strategy.setControllerMappingHyphenStyle(true);
 		strategy.setTablePrefix(pc.getModuleName() + "_");
-		mpg.setStrategy(strategy);
-		mpg.setTemplateEngine(new FreemarkerTemplateEngine());
-		mpg.execute();
 	}
+
 }
