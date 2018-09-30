@@ -96,7 +96,7 @@ public class GreenGenerator extends AbstractGeneratorConfig {
 		strategy.setNaming(NamingStrategy.underline_to_camel);
 		strategy.setColumnNaming(NamingStrategy.underline_to_camel);
 //		strategy.setSuperEntityClass("com.baomidou.ant.common.BaseEntity");
-		strategy.setEntityLombokModel(true);
+		strategy.setEntityLombokModel(false);
 		strategy.setRestControllerStyle(true);
 		strategy.setSuperControllerClass("com.green.base.controller.BaseController");
 		strategy.setInclude(scanner("表名").split("[,;]"));
