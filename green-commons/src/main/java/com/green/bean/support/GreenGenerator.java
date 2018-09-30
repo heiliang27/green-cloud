@@ -41,7 +41,7 @@ public class GreenGenerator extends AbstractGeneratorConfig {
 		}
 		throw new MybatisPlusException("请输入正确的" + tip + "！");
 	}
-
+	// 系统当前跟路径
 	String projectPath = System.getProperty("user.dir");
 
 	// 全局配置

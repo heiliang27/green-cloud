@@ -1,4 +1,4 @@
-package com.green.common.util;
+package com.green.common.generator;
 
 import com.green.bean.support.GreenGenerator;
 
