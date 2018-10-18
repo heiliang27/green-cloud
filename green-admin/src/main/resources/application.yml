@@ -35,3 +35,18 @@ spring:
      url: jdbc:mysql://qdm170159589.my3w.com/qdm170159589_db?useUnicode=true&characterEncoding=UTF8
      username: qdm170159589
      password: 12345678
+     
+#redis-cache 相关
+redis:
+    pool:
+         maxActive: 300
+         maxIdle: 100
+         maxWait: 1000
+    host:  localhost
+    port:  6379
+    password:
+    timeout: 2000
+    # 服务或应用名
+    sysName: green-web
+    enable: true
+    database: 0

@@ -1,4 +1,4 @@
-package com.green.bean.config;
+package com.green.bean.properties;
 
 import java.sql.SQLException;
 
