@@ -1,9 +1,9 @@
 package com.green.bean.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.stereotype.Component;
 
+import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
 @Component
@@ -24,7 +24,7 @@ public class RedisProperties {
 
 	private String host = "127.0.0.1";
 
-	private String port = "6379";
+	private Integer port = 6379;
 
 	private String password = "";
 
@@ -32,15 +32,18 @@ public class RedisProperties {
 
 	private Integer database = 0;
 
-	public JedisPoolConfig jedisPoolConfig() {
-		JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
-		// 最大空闲数
+	public JedisPool config(JedisPoolConfig jedisPoolConfig) {
+		
+		jedisPoolConfig.setMinIdle(minIdle);
+		
 		jedisPoolConfig.setMaxIdle(maxIdle);
 		// 连接池的最大数据库连接数
 		jedisPoolConfig.setMaxTotal(maxActive);
 		// 最大建立连接等待时间
 		jedisPoolConfig.setMaxWaitMillis(maxWaitMillis);
-		return jedisPoolConfig;
+		
+		JedisPool jedisPool = new JedisPool(jedisPoolConfig, host, port, timeout, password, database);
+		return jedisPool;
 	}
 
 }
