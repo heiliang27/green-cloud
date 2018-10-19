@@ -26,7 +26,7 @@ public class RedisProperties {
 
 	private Integer port = 6379;
 
-	private String password = "";
+	private String password = "123456";
 
 	private Integer timeout = 2000;
 

@@ -12,6 +12,9 @@ import com.green.base.vo.BaseResponse;
 import com.green.modular.entity.User;
 import com.green.modular.service.IUserService;
 
+import redis.clients.jedis.Jedis;
+import redis.clients.jedis.JedisPool;
+
 /**
  * <p>
  *  前端控制器
@@ -26,10 +29,15 @@ public class UserController extends BaseController {
 
 	@Autowired
 	private IUserService iUserService;
+	@Autowired
+	private JedisPool jedisPool;
 	
 	@RequestMapping("/list")
 	public BaseResponse<List> getUserList(){
+		Jedis jedis = jedisPool.getResource();
 		List<User> list = iUserService.list(null); 
+		jedis.setex("use", 2000, list.toString());
+		System.out.println(jedis.get("user"));
 		return new BaseResponse<List>(list);
 	}
 }
