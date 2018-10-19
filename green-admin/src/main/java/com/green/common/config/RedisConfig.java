@@ -15,11 +15,20 @@ public class RedisConfig {
 	@Autowired
 	private RedisProperties redisProperties;
 
-	/** JedisPoolConfig 连接池 */
+	/** JedisPoolConfig 连接池配置 */
 	@Bean
-	public JedisPool jedisPoolConfig() {
+	public JedisPoolConfig jedisPoolConfig() {
 		JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
-		JedisPool jedisPool = redisProperties.config(jedisPoolConfig);
+		redisProperties.jedisPoolConfig(jedisPoolConfig);
+		System.out.println("jedisPoolConfig--初始化----------------------------");
+		return jedisPoolConfig;
+	}
+
+	/** JedisPool连接池 */
+	@Bean
+	public JedisPool jedisPool() {
+		JedisPool jedisPool = redisProperties.jedisPool(jedisPoolConfig());
+		System.out.println("jedisPool--初始化----------------------------");
 		return jedisPool;
 	}
 }
