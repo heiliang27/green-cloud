@@ -2,6 +2,7 @@ package com.green.modular.controller;
 
 
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,9 +36,11 @@ public class UserController extends BaseController {
 	@RequestMapping("/list")
 	public BaseResponse<List> getUserList(){
 		Jedis jedis = jedisPool.getResource();
+		jedis.setex("lml",2000, "jedis"+new Random().nextInt(1000));		
 		List<User> list = iUserService.list(null); 
 		jedis.setex("use", 2000, list.toString());
-		System.out.println(jedis.get("user"));
+		System.out.println("---------redis----"+jedis.get("lml"));
+		System.out.println(jedis.get("use"));
 		return new BaseResponse<List>(list);
 	}
 }
