@@ -12,6 +12,7 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.green.bean.properties.RedisProperties;
+import com.green.util.RedisUtil;
 
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
@@ -22,7 +23,7 @@ public class RedisConfig {
 	private RedisProperties redisProperties;
 
 	/** JedisPoolConfig 连接池配置 */
-	@Bean
+	@Bean  
 	public JedisPoolConfig jedisPoolConfig() {
 		JedisPoolConfig jedisPoolConfig = new JedisPoolConfig();
 		RedisProperties.Pool pool = this.redisProperties.getJedis().getPool();
@@ -40,6 +41,13 @@ public class RedisConfig {
 				(int)redisProperties.getTimeout().toMillis());
 		System.out.println("jedisPool--初始化----------------------------");
 		return jedisPool;
+	}
+	
+	@Bean
+	public RedisUtil redisUtil(RedisTemplate<String, Object> redisTemplate){
+		RedisUtil redisUtil = new RedisUtil();
+		redisUtil.setRedisTemplate(redisTemplate);
+		return redisUtil;
 	}
 
 	@Bean
