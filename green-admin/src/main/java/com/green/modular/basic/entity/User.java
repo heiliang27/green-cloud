@@ -1,4 +1,4 @@
-package com.green.modular.admin.entity;
+package com.green.modular.basic.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

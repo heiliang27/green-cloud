@@ -1,8 +1,8 @@
-package com.green.modular.admin.service.impl;
+package com.green.modular.basic.service.impl;
 
-import com.green.modular.admin.entity.User;
-import com.green.modular.admin.mapper.UserMapper;
-import com.green.modular.admin.service.IUserService;
+import com.green.modular.basic.entity.User;
+import com.green.modular.basic.mapper.UserMapper;
+import com.green.modular.basic.service.IUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 

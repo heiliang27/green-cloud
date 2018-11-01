@@ -1,6 +1,6 @@
-package com.green.modular.admin.service;
+package com.green.modular.basic.service;
 
-import com.green.modular.admin.entity.User;
+import com.green.modular.basic.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
