@@ -1,4 +1,4 @@
-package com.green.common.config;
+package com.green.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -19,6 +19,7 @@ import redis.clients.jedis.JedisPoolConfig;
 
 @Configuration
 public class RedisConfig {
+	
 	@Autowired
 	private RedisProperties redisProperties;
 
@@ -42,19 +43,12 @@ public class RedisConfig {
 		System.out.println("jedisPool--初始化----------------------------");
 		return jedisPool;
 	}
-	
-	@Bean
-	public RedisUtil redisUtil(RedisTemplate<String, Object> redisTemplate){
-		RedisUtil redisUtil = new RedisUtil();
-		redisUtil.setRedisTemplate(redisTemplate);
-		return redisUtil;
-	}
 
+	/** RedisTemplate创建 */
 	@Bean
 	public RedisTemplate<Object, Object> redisTemplate(RedisConnectionFactory redisConnectionFactory) {
 		RedisTemplate<Object, Object> redisTemplate = new RedisTemplate<>();
 		redisTemplate.setConnectionFactory(redisConnectionFactory);
-
 		// 使用Jackson2JsonRedisSerialize 替换默认序列化
 		Jackson2JsonRedisSerializer<Object> jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer<Object>(
 				Object.class);
@@ -62,14 +56,22 @@ public class RedisConfig {
 		objectMapper.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
 		objectMapper.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
 		jackson2JsonRedisSerializer.setObjectMapper(objectMapper);
-
 		// 设置value的序列化规则和 key的序列化规则
 		redisTemplate.setValueSerializer(jackson2JsonRedisSerializer);
 		redisTemplate.setKeySerializer(new StringRedisSerializer());
 		redisTemplate.afterPropertiesSet();
 		return redisTemplate;
 	}
+	
+	/** redis公共方法 */
+	@Bean
+	public RedisUtil redisUtil(RedisTemplate redisTemplate){
+		RedisUtil redisUtil = new RedisUtil();
+		redisUtil.setRedisTemplate(redisTemplate);
+		return redisUtil;
+	}
 
+	/** redis连接池设置 */
 	private JedisPoolConfig jedisPoolConfig(RedisProperties.Pool pool) {
 		JedisPoolConfig config = new JedisPoolConfig();
 		config.setMaxTotal(pool.getMaxActive());

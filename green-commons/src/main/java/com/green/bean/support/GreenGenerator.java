@@ -58,7 +58,6 @@ public class GreenGenerator extends AbstractGeneratorConfig {
 	// 资源配置
 	private void dataSourceConfig() {
 		dsc.setUrl("jdbc:mysql://qdm170159589.my3w.com/qdm170159589_db?useUnicode=true&characterEncoding=UTF8");
-		// dsc.setSchemaName("public");
 		dsc.setDriverName("com.mysql.jdbc.Driver");
 		dsc.setUsername("qdm170159589");
 		dsc.setPassword("12345678");
@@ -67,7 +66,7 @@ public class GreenGenerator extends AbstractGeneratorConfig {
 	// 包配置
 	private void packageConfig() {
 		pc.setModuleName(scanner("模块名"));
-		pc.setParent("com.green");
+		pc.setParent("com.green.modular");
 	}
 
 	// 自定义配置

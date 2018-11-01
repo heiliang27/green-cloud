@@ -1,6 +1,6 @@
-package com.green.modular.mapper;
+package com.green.modular.admin.mapper;
 
-import com.green.modular.entity.User;
+import com.green.modular.admin.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author limingliang
- * @since 2018-09-30
+ * @since 2018-11-01
  */
 public interface UserMapper extends BaseMapper<User> {
 

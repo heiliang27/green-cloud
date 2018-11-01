@@ -1,4 +1,4 @@
-package com.green.common.config;
+package com.green.config;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;

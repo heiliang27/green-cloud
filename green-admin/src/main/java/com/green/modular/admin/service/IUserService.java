@@ -1,6 +1,6 @@
-package com.green.modular.service;
+package com.green.modular.admin.service;
 
-import com.green.modular.entity.User;
+import com.green.modular.admin.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -9,7 +9,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * </p>
  *
  * @author limingliang
- * @since 2018-09-30
+ * @since 2018-11-01
  */
 public interface IUserService extends IService<User> {
 

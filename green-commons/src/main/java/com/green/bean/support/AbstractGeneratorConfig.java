@@ -49,14 +49,7 @@ public abstract class AbstractGeneratorConfig {
 		mpg.setCfg(cfg);
 		mpg.setStrategy(strategy);
 		mpg.setTemplateEngine(new FreemarkerTemplateEngine());
-		mpg.execute();
-
-		// 获取table信息,用于guns代码生成
-		/*
-		 * List<TableInfo> tableInfoList = mpg.getConfig().getTableInfoList();
-		 * if (tableInfoList != null && tableInfoList.size() > 0) {
-		 * this.tableInfo = tableInfoList.get(0); }
-		 */
+		mpg.execute();		
 	}
 
 }
