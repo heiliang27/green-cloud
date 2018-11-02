@@ -35,7 +35,8 @@ public class UserController extends BaseController {
 	@RequestMapping("/list")
 	public BaseResponse<List<User>> getUsers(){
 		List<User> user = iUserService.list(null);
-		logger.info(port);
+		String token = request.getParameter("token");
+		logger.info("port="+port+"; token="+token);
 		return new BaseResponse<>(user);
 	}
 }

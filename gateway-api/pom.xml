@@ -9,7 +9,7 @@
 	<artifactId>gateway-api</artifactId>
 
 	<!-- maven引入依赖jar包 -->
-	<dependencies>
+	<dependencies>	
 
 		<!-- 注册中心客户端 -->
 		<dependency>

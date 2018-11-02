@@ -32,6 +32,7 @@ public class MyFilter extends ZuulFilter{
 	            return null;
 	        }
 	        log.info("ok");
+	        request.setAttribute("token", accessToken);
 	        return null;
 	}
 
