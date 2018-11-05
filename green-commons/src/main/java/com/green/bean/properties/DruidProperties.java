@@ -3,7 +3,6 @@ package com.green.bean.properties;
 import java.sql.SQLException;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.stereotype.Component;
 
 import com.alibaba.druid.pool.DruidDataSource;
 
